@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um Brothers Billing App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="medium1">
+    <div class="container">
+        <!-- Header with logo and title -->
+        <div class="header-container">
+            <img src="Logoo.png" alt="Logo" class="logo">
+            <h1>UM BROTHERS BILL BOOK</h1>
+        </div>
+
+        <!-- Display Size Options -->
+        <div class="display-options">
+            <button class="small" onclick="setDisplaySize('small')">Small Display</button>
+            <button class="medium" onclick="setDisplaySize('medium')">Medium Display</button>
+        </div>
+
+        <!-- Currency Selection -->
+        <div class="form-group">
+            <label for="currency">Currency:</label>
+            <select id="currency">
+                <option value="LKR">LKR (Sri Lankan Rupee)</option>
+                <option value="Rs.">Rs. (Indian Rupee)</option>
+                <option value="USD">USD ($ - US Dollar)</option>
+                <option value="CNY">CNY (¥ - Chinese Yuan)</option>
+                <option value="PKR">PKR (₨ - Pakistani Rupee)</option>
+                <option value="AUD">AUD (A$ - Australian Dollar)</option>
+                <option value="RUB">RUB (₽ - Russian Ruble)</option>
+                <option value="CAD">CAD (C$ - Canadian Dollar)</option>
+                <option value="SAR">SAR (ر.س - Saudi Riyal)</option>
+                <option value="QAR">QAR (ر.ق - Qatari Riyal)</option>
+                <option value="AED">AED (د.إ - UAE Dirham)</option>
+                <option value="JPY">JPY (¥ - Japanese Yen)</option>
+                <option value="KWD">KWD (د.ك - Kuwaiti Dinar)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" placeholder="Enter item name" onkeypress="handleKeyPress(event, 'itemQuantity')">
+        </div>
+        <div class="form-group">
+            <label for="itemQuantity">Quantity:</label>
+            <input type="number" id="itemQuantity" placeholder="Enter quantity" onkeypress="handleKeyPress(event, 'itemPrice')">
+        </div>
+        <div class="form-group">
+            <label for="itemPrice">Price:</label>
+            <input type="number" id="itemPrice" placeholder="Enter price" onkeypress="handleKeyPress(event, 'addItem')">
+        </div>
+        <button id="addItem" class="btn" onclick="addItem()">Add Item</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="itemTableBody">
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="5">Full Total</td>
+                    <td id="fullTotal">0</td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <button type="button" class="btn1" onclick="resetForm()">Reset</button>
+        <button class="btn2" onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Include jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <!-- Include jsPDF Autotable Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>

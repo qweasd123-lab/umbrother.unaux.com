@@ -1,0 +1,230 @@
+/* General Styling */
+body {
+    font-family: Algerian, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FA48CA;
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background-image: url('../b.jpg');
+    background-size: 100%;
+    border-style: groove;
+    text-align: center;
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    align-items: center; /* Align logo and title vertically */
+    justify-content: space-between; /* Space between logo and h1 */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Logo Styling */
+.logo {
+    width: 200px; /* Set the size of the logo */
+    height: 150px; /* Set the size of the logo */
+    margin-right: 10px; /* Add space after logo */
+    align-self: flex-start; /* Align logo to the left */
+}
+
+/* Title Styling */
+h1 {
+    flex-grow: 1; /* Allow title to take up remaining space */
+    text-align: center; /* Center align the title text */
+    font-size: 28px;
+    margin: 0; /* Remove default margin */
+    position: absolute;
+    left: 50%; /* Move to the center horizontally */
+    transform: translateX(-50%); /* Adjust for perfect centering */
+    margin-left: 30px;
+   color: darkblue;
+    
+}
+
+/* Display Options */
+.display-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.display-options button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+    border: black;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    border-style: groove;
+}
+
+.display-options button:hover {
+    background-color: lightsalmon;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: center;
+}
+
+table, th, td, tr {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 70%;
+    padding: 10px;
+    margin: 0 auto 10px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: block;
+}
+
+/* Button Styling */
+button.btn, button.btn1, button.btn2 {
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    border-style: groove;
+    display: inline-block;
+}
+
+button.btn:hover {
+    background-color: chartreuse;
+}
+
+button.btn1:hover {
+    background-color: #ff0000;
+}
+
+button.btn2:hover {
+    background-color: #12edbe;
+}
+
+/* Total Row Styling */
+.total-row {
+    font-weight: bold;
+}
+
+/* Default Sizes */
+body.small th, body.small td, body.small input, body.small .btn {
+    font-size: 10px;
+    padding: 5px;
+}
+
+body.medium th, body.medium td, body.medium input, body.medium .btn {
+    font-size: 14px;
+    padding: 10px;
+}
+
+body.large th, body.large td, body.large input, body.large .btn {
+    font-size: 18px;
+    padding: 15px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .display-options {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .display-options button {
+        width: 45%;
+        font-size: 0.9rem;
+    }
+
+    button.btn, button.btn1, button.btn2 {
+        font-size: 0.9rem;
+    }
+
+    table, thead th, tbody td {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    .display-options button {
+        width: 100%;
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+
+    input, select {
+        font-size: 0.8rem;
+    }
+
+    button.btn, button.btn1, button.btn2 {
+        font-size: 0.8rem;
+    }
+
+    table, thead th, tbody td {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    .total-row td {
+        font-size: 0.9rem;
+    }
+}
